@@ -11,23 +11,23 @@ Pizza.prototype.pizzaName = function() {
 
 var pizzaPrice = function(inputtedSizeChoice, inputtedTopping1, inputtedTopping2) {
   var price = 0;
-  if (inputtedSizeChoice === "1") {
+  if (inputtedSizeChoice === "Small") {
     price = price + 1;
-  } else if (inputtedSizeChoice === "2") {
+  } else if (inputtedSizeChoice === "Large") {
     price = price + 2;
   } else {
     price = price + 3;
   }
-  if (inputtedTopping1 === "4") {
+  if (inputtedTopping1 === "Cheese") {
     price = price + 1;
-  } else if (inputtedTopping1 === "5") {
+  } else if (inputtedTopping1 === "Tomatoes" || "Peppers" || "Soyrizo") {
     price = price + 2;
   } else {
     price = price + 3;
   }
-  if (inputtedTopping2 === "4") {
+  if (inputtedTopping2 === "Cheese") {
     price = price + 1;
-  } else if (inputtedTopping2 === "5") {
+  } else if (inputtedTopping2 === "Tomatoes" || "Peppers" || "Soyrizo") {
     price = price + 2;
   } else {
     price = price + 3;
@@ -47,16 +47,19 @@ var determinePrice = function(pizzaPrice) {
 
 //UI
 $(document).ready(function() {
-  $("form#pizzaChoice").submit(function(event) {
+  $("form#pizzaChoice").submit(function(event){
     event.preventDefault();
-    var inputtedSizeChoice = $("input#sizeChoice").val();
-    var inputtedTopping1 = $("input#topping1").val();
-    var inputtedTopping2 = $("input#topping2").val();
+
+    var inputtedSizeChoice = $("#sizeChoice").val();
+    var inputtedTopping1 = $("#topping1").val();
+    var inputtedTopping2 = $("#topping2").val();
+
     var newPizza = new Pizza(inputtedSizeChoice, inputtedTopping1, inputtedTopping2);
+    var pizzaInfo = "Your pizza a: " + this.size + ", with " + this.topping1 + ", and " + this.topping2 + " is ready.";
     $("ul#pizzaInfo").append("<span class='pizzaTitle'>" + newPizza.pizzaName() + "<span>");
     var price = pizzaPrice(inputtedSizeChoice, inputtedTopping1, inputtedTopping2);
 
     console.log(price);
-    pizzaPrice(price);
+    determinePrice(pizzaPrice);
   });
 });
