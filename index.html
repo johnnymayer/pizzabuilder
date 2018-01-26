@@ -10,36 +10,48 @@
 </head>
 
 <body>
-  <h1>PIZZA BUILDER</h1>
-  <p>Build yourself a pizza!  Select your options for size and toppings!</p>
-
-  <form id="pizzaChoice">
-  <div class="form-group">
-    <label for="size">Choose your size.</label>
-    <select id="sizeChoice" class="form-control">
-      <option value="Small">Small</option>
-      <option value="Large">Large</option>
-      <option value="TripleXL">Triple XL</option>
-    </select>
-  <div class="form-group">
-    <label for="topping1">Topping Choice 1.</label>
-    <select id="topping1" class="form-control">
-      <option value="1">Cheese</option>
-      <option value="1">Tomatoes</option>
-      <option value="1">Peppers</option>
-      <option value="2">Soyrizo</option>
-      <option value="2">Donuts</option>
-    </select>
-    <div class="form-group">
-      <label for="topping1">Topping Choice 2.</label>
-      <select id="topping2" class="form-control">
-        <option value="3">Cheese</option>
-        <option value="3">Tomatoes</option>
-        <option value="4">Peppers</option>
-        <option value="4">Soyrizo</option>
-        <option value="4">Donuts</option>
-      </select>
-
+  <div class="container">
+    <h1>PIZZA BUILDER</h1>
+    <p>Build yourself a pizza! Select your options for size and toppings!</p>
+    <div class="container">
+      <form id="pizzaChoice">
+        <div class="form-group">
+          <label for="size">Choose your size.</label>
+          <select id="sizeChoice" class="form-control">
+          <option value="5">Small</option>
+          <option value="6">Large</option>
+          <option value="7">Triple XL</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="topping1">Topping Choice 1.</label>
+          <select id="topping1" class="form-control">
+          <option value="1">Cheese</option>
+          <option value="1">Tomatoes</option>
+          <option value="1">Peppers</option>
+          <option value="2">Soyrizo</option>
+          <option value="2">Donuts</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="topping1">Topping Choice 2.</label>
+          <select id="topping2" class="form-control">
+            <option value="3">Cheese</option>
+            <option value="3">Tomatoes</option>
+            <option value="4">Peppers</option>
+            <option value="4">Soyrizo</option>
+            <option value="4">Donuts</option>
+          </select>
+        </div>
+        <button type="submit" class=".btn-lg btn-primary">Build your pizza!</button>
+      </form>
+      <div class="container">
+        <span id=pizzaResult></span>
+        <ul id="pizzaInfo">
+        </ul>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
