@@ -9,31 +9,40 @@ Pizza.prototype.pizzaName = function() {
   return "Your pizza a: " + this.size + ", with " + this.topping1 + ", and " + this.topping2 + " is ready.";
 };
 
-var pricePizza = function(inputtedSizeChoice, inputtedTopping1, inputtedTopping2) {
-  var price = 5;
-  var priceToppings = 0;
-  if (inputtedSizeChoice === "5") {
-    priceToppings = priceToppings + 5;
-  } else if (inputtedSizeChoice === "6") {
-    priceToppings = priceToppings + 6;
+var pizzaPrice = function(inputtedSizeChoice, inputtedTopping1, inputtedTopping2) {
+  var price = 0;
+  if (inputtedSizeChoice === "1") {
+    price = price + 1;
+  } else if (inputtedSizeChoice === "2") {
+    price = price + 2;
   } else {
-    priceToppings = priceToppings + 12;
+    price = price + 3;
   }
   if (inputtedTopping1 === "4") {
-    priceToppings = priceToppings + 1;
+    price = price + 1;
   } else if (inputtedTopping1 === "5") {
-    priceToppings = priceToppings + 2;
+    price = price + 2;
   } else {
-    priceToppings = priceToppings + 6;
+    price = price + 3;
   }
   if (inputtedTopping2 === "4") {
-    priceToppings = priceToppings + 1;
+    price = price + 1;
   } else if (inputtedTopping2 === "5") {
-    priceToppings = priceToppings + 2;
+    price = price + 2;
   } else {
-    priceToppings = priceToppings + 6;
+    price = price + 3;
   }
-  return "It will cost $" + price + priceToppings;
+  return price;
+};
+
+var determinePrice = function(pizzaPrice) {
+ if (price <= 3) {
+   $("#price10").text($("ul#pizzaInfo").append("<li><span class='price'>$10</span></li>"));
+ } else if (price > 4 && price < 7 ) {
+   $("#price20").text($("ul#pizzaInfo").append("<li><span class='price'>$20</span></li>"));
+ } else {
+   $("#price30").text($("ul#pizzaInfo").append("<li><span class='price'>$50</span></li>"));
+ }
 };
 
 //UI
@@ -45,5 +54,9 @@ $(document).ready(function() {
     var inputtedTopping2 = $("input#topping2").val();
     var newPizza = new Pizza(inputtedSizeChoice, inputtedTopping1, inputtedTopping2);
     $("ul#pizzaInfo").append("<span class='pizzaTitle'>" + newPizza.pizzaName() + "<span>");
+    var price = pizzaPrice(inputtedSizeChoice, inputtedTopping1, inputtedTopping2);
+
+    console.log(price);
+    pizzaPrice(price);
   });
 });
