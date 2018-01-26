@@ -21,14 +21,14 @@ var pricePizza = function(inputtedSizeChoice, inputtedTopping1, inputtedTopping2
   }
   if (inputtedTopping1 === "4") {
     priceToppings = priceToppings + 1;
-  } else if (inputtedTopping1 === "5"){
+  } else if (inputtedTopping1 === "5") {
     priceToppings = priceToppings + 2;
   } else {
     priceToppings = priceToppings + 6;
   }
   if (inputtedTopping2 === "4") {
     priceToppings = priceToppings + 1;
-  } else if (inputtedTopping2 === "5"){
+  } else if (inputtedTopping2 === "5") {
     priceToppings = priceToppings + 2;
   } else {
     priceToppings = priceToppings + 6;
@@ -39,11 +39,11 @@ var pricePizza = function(inputtedSizeChoice, inputtedTopping1, inputtedTopping2
 //UI
 $(document).ready(function() {
   $("form#pizzaChoice").submit(function(event) {
-      event.preventDefault();
-      var inputtedSizeChoice = $("input#sizeChoice").val();
-      var inputtedTopping1 = $("input#topping1").val();
-      var inputtedTopping2 = $("input#topping2").val();
-      var newPizza = new Pizza(inputtedSizeChoice, inputtedTopping1, inputtedTopping2);
-      $("ul#pizzaInfo").append("<span class='pizzaTitle'>" + newPizza.pizzaName() + "<span>");
-    });
+    event.preventDefault();
+    var inputtedSizeChoice = $("input#sizeChoice").val();
+    var inputtedTopping1 = $("input#topping1").val();
+    var inputtedTopping2 = $("input#topping2").val();
+    var newPizza = new Pizza(inputtedSizeChoice, inputtedTopping1, inputtedTopping2);
+    $("ul#pizzaInfo").append("<span class='pizzaTitle'>" + newPizza.pizzaName() + "<span>");
   });
+});
