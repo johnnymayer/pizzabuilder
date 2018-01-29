@@ -9,3 +9,31 @@ h1 {
 li {
   list-style: none;
 }
+
+.button {
+    background-color: white; /* Green */
+    border-color: rgba(255,0,0,.30);
+    border-style: outset;
+    color: red;
+    width: 240px;
+    height: 120px;
+    padding: 48px 48px;
+    display: inline-block;
+    text-align: center;
+    display: inline-block;
+    font-size: 10px;
+    margin: 24px 16px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    font-size: 12px;
+}
+
+.button:hover {
+    background-color: black;
+    color: white;
+    box-shadow: 1px 1px 140px 1px rgba(195,0,0,.5);
+    -webkit-box-shadow: 1px 1px 140px 1px rgba(195,0,0,.5);
+    -moz-box-shadow: 1px 1px 140px 1px rgba(195,249,96,.5);
+    border-width: 6px;
+    border-style: ridge;
+}
