@@ -6,6 +6,15 @@ This is a sample website to work with constructors and prototypes.
 ## Download
 Visit https://github.com/johnnymayer/pizzabuilder in your browser.
 
+## Specs
+A user will make choices about their pizza size and toppings.  Based on size and toppings selected, a price will be determined.
+
+Sample input: Small, Cheese, Cheese.
+Expected output: Your pizza : Small, with Cheese, and Cheese is ready. $12
+
+Sample input: Triple XL, Donuts, Donuts.
+Expected output: Your pizza : Triple XL, with Donuts, and Donuts is ready. $30
+
 ## Author
 Johnny Mayer
      johnnymayer@gmail.com
