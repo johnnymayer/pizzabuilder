@@ -1,12 +1,12 @@
 //BACK END
-function Pizza(size, topping1, topping2) {
-  this.size = size;
-  this.topping1 = topping1;
-  this.topping2 = topping2;
+function Pizza(inputtedSizeChoice, inputtedTopping1, inputtedTopping2) {
+  this.size = inputtedSizeChoice;
+  this.topping1 = inputtedTopping1;
+  this.topping2 = inputtedTopping2;
 }
 
 Pizza.prototype.pizzaName = function() {
-  return "Your pizza a: " + this.size + ", with " + this.topping1 + ", and " + this.topping2 + " is ready.";
+  return "Your pizza : " + this.size + ", with " + this.topping1 + ", and " + this.topping2 + " is ready.";
 };
 
 var pizzaPrice = function(inputtedSizeChoice, inputtedTopping1, inputtedTopping2) {
@@ -32,7 +32,6 @@ var pizzaPrice = function(inputtedSizeChoice, inputtedTopping1, inputtedTopping2
   } else {
     price = price + 3;
   }
-  console.log(price);
   return price;
 };
 
@@ -62,7 +61,6 @@ $(document).ready(function() {
     var priceDetail = pizzaPrice(inputtedSizeChoice, inputtedTopping1, inputtedTopping2);
 
     $("ul#pizzaInfo").append("<span class='pizzaTitle'>" + newPizza.pizzaName() + "<span>");
-    console.log(pizzaInfo);
     determinePrice(pizzaPrice);
   });
 });
