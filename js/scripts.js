@@ -48,7 +48,6 @@ $(document).ready(function() {
     var pizzaInfo = "Your pizza a: " + this.size + ", with " + this.topping1 + ", and " + this.topping2 + " is ready.";
 
     var priceDetail = newPizza.pizzaPrice();
-    alert(priceDetail);
     $("ul#pizzaInfo").empty();
     $("ul#pizzaInfo").append("<span class='pizzaTitle'>" + newPizza.pizzaName() + " $" + newPizza.pizzaPrice() + "<span>");
     determinePrice(pizzaPrice);
