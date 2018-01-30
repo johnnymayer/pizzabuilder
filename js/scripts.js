@@ -6,7 +6,7 @@ function Pizza(inputtedSizeChoice, inputtedTopping1, inputtedTopping2) {
 }
 
 Pizza.prototype.pizzaName = function() {
-  return "Your pizza : " + this.size + ", with " + this.topping1 + ", and " + this.topping2 + " is ready.";
+  return "Your pizza, a " + this.size + " " + this.topping1 + " with " + this.topping2 + " is ready. It will cost ";
 };
 
 Pizza.prototype.pizzaPrice = function() {
@@ -30,7 +30,7 @@ Pizza.prototype.pizzaPrice = function() {
   } else if (this.topping2 === "Tomatoes" || this.topping2 === "Peppers" || this.topping2 === "Soyrizo") {
     price = price + 2;
   }
-  return price;
+  return price + "!";
 };
 
 //UI
